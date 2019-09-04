@@ -65,41 +65,41 @@ epochs = 30
 
 model = Sequential()
 model.add(ZeroPadding2D((1, 1)))
-model.add(Conv2D(64, (5, 5), border_mode='same', input_shape=(48, 48, 1)))
+model.add(Conv2D(64, (3, 3), border_mode='same', input_shape=(48, 48, 1)))
 model.add(BatchNormalization())
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 
 # 2nd Convolution layer
 model.add(ZeroPadding2D((1, 1)))
-model.add(Conv2D(128, (5, 5), border_mode='same'))
+model.add(Conv2D(128, (3, 3), border_mode='same'))
 model.add(BatchNormalization())
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
-# model.add(Dropout(0.2))
+model.add(Dropout(0.3))
 
 # 3rd Convolution layer
 model.add(ZeroPadding2D((1, 1)))
-model.add(Conv2D(256, (5, 5), border_mode='same'))
+model.add(Conv2D(256, (3, 3), border_mode='same'))
 model.add(BatchNormalization())
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
-# model.add(Dropout(0.2))
+model.add(Dropout(0.3))
 
 # 4th Convolution layer
 model.add(ZeroPadding2D((1, 1)))
-model.add(Conv2D(512, (5, 5), border_mode='same'))
+model.add(Conv2D(512, (3, 3), border_mode='same'))
 model.add(BatchNormalization())
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
-# model.add(Dropout(0.2))
+model.add(Dropout(0.3))
 
 model.add(ZeroPadding2D((1, 1)))
-model.add(Conv2D(32, (5, 5), border_mode='same'))
+model.add(Conv2D(1024, (3, 3), border_mode='same'))
 model.add(BatchNormalization())
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
-# model.add(Dropout(0.2))
+model.add(Dropout(0.3))
 
 # Flattening
 model.add(Flatten())
