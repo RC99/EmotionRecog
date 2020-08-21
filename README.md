@@ -7,6 +7,7 @@ It is being created for people who are preparing for online interviews, want to 
 ## Procedure:
 - Collection of dataset.
 - Creation of classifier model with the best possible accuracy.
+- Testing on images and videos
 - Deployment of classifier on web and app possibly.
 
 
